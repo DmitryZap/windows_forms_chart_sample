@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include "MyForm1.h"
 
 namespace work_with_graph {
@@ -9,10 +9,12 @@ namespace work_with_graph {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+
+	// РџРѕРґРєР»СЋС‡Р°РµРј РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІРѕ РёРјРµРЅ РґР»СЏ chart
 	using namespace System::Windows::Forms::DataVisualization::Charting;
 
 	/// <summary>
-	/// Сводка для MyForm
+	/// РЎРІРѕРґРєР° РґР»СЏ MyForm
 	/// </summary>
 	public ref class MyForm : public System::Windows::Forms::Form
 	{
@@ -21,14 +23,14 @@ namespace work_with_graph {
 		{
 			InitializeComponent();
 			//
-			//TODO: добавьте код конструктора
+			//TODO: РґРѕР±Р°РІСЊС‚Рµ РєРѕРґ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°
 			//
 
 		}
 
 	protected:
 		/// <summary>
-		/// Освободить все используемые ресурсы.
+		/// РћСЃРІРѕР±РѕРґРёС‚СЊ РІСЃРµ РёСЃРїРѕР»СЊР·СѓРµРјС‹Рµ СЂРµСЃСѓСЂСЃС‹.
 		/// </summary>
 		~MyForm()
 		{
@@ -45,14 +47,14 @@ namespace work_with_graph {
 
 	private:
 		/// <summary>
-		/// Требуется переменная конструктора.
+		/// РўСЂРµР±СѓРµС‚СЃСЏ РїРµСЂРµРјРµРЅРЅР°СЏ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°.
 		/// </summary>
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// Обязательный метод для поддержки конструктора - не изменяйте
-		/// содержимое данного метода при помощи редактора кода.
+		/// РћР±СЏР·Р°С‚РµР»СЊРЅС‹Р№ РјРµС‚РѕРґ РґР»СЏ РїРѕРґРґРµСЂР¶РєРё РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° - РЅРµ РёР·РјРµРЅСЏР№С‚Рµ
+		/// СЃРѕРґРµСЂР¶РёРјРѕРµ РґР°РЅРЅРѕРіРѕ РјРµС‚РѕРґР° РїСЂРё РїРѕРјРѕС‰Рё СЂРµРґР°РєС‚РѕСЂР° РєРѕРґР°.
 		/// </summary>
 		void InitializeComponent(void)
 		{
@@ -81,7 +83,7 @@ namespace work_with_graph {
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(441, 49);
 			this->button1->TabIndex = 1;
-			this->button1->Text = L"Добавить точку";
+			this->button1->Text = L"Р”РѕР±Р°РІРёС‚СЊ С‚РѕС‡РєСѓ";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
 			// 
@@ -101,40 +103,40 @@ namespace work_with_graph {
 		}
 #pragma endregion
 private: System::Void MyForm_Load(System::Object^  sender, System::EventArgs^  e) {
-		// Добавляем новую серию с названием "Line" (aka график) на наш chart 
+		// Р”РѕР±Р°РІР»СЏРµРј РЅРѕРІСѓСЋ СЃРµСЂРёСЋ СЃ РЅР°Р·РІР°РЅРёРµРј "Line" (aka РіСЂР°С„РёРє) РЅР° РЅР°С€ chart 
 		chart1->Series->Add("Line");
 		/* 
-		 * Говорим, что серия будет кривой линией (а еще она может быть точками Point, 
-		 * обычной линией Line или гистограммой (по дефолту)) 
+		 * Р“РѕРІРѕСЂРёРј, С‡С‚Рѕ СЃРµСЂРёСЏ Р±СѓРґРµС‚ РєСЂРёРІРѕР№ Р»РёРЅРёРµР№ (Р° РµС‰Рµ РѕРЅР° РјРѕР¶РµС‚ Р±С‹С‚СЊ С‚РѕС‡РєР°РјРё Point, 
+		 * РѕР±С‹С‡РЅРѕР№ Р»РёРЅРёРµР№ Line РёР»Рё РіРёСЃС‚РѕРіСЂР°РјРјРѕР№ (РїРѕ РґРµС„РѕР»С‚Сѓ)) 
 		 */
 		chart1->Series["Line"]->ChartType = SeriesChartType::Spline;
 	}
 
-	// Вот эта штука запускает вторую форму
+	// Р’РѕС‚ СЌС‚Р° С€С‚СѓРєР° Р·Р°РїСѓСЃРєР°РµС‚ РІС‚РѕСЂСѓСЋ С„РѕСЂРјСѓ
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
-		// Создаем экзмпляр класса формы
+		// РЎРѕР·РґР°РµРј СЌРєР·РјРїР»СЏСЂ РєР»Р°СЃСЃР° С„РѕСЂРјС‹
 		MyForm1^ form = gcnew MyForm1();
 
-		// Добавление обработчика событий
-		form->FormClosing += gcnew FormClosingEventHandler(this, &MyForm::MyForm1_FormClosing);	// САМОЕ ВАЖНОЕ ИЗ ВСЕГО КОДА !!!!!!!!!!
-		// Показываем форму
+		// Р”РѕР±Р°РІР»РµРЅРёРµ РѕР±СЂР°Р±РѕС‚С‡РёРєР° СЃРѕР±С‹С‚РёР№
+		form->FormClosing += gcnew FormClosingEventHandler(this, &MyForm::MyForm1_FormClosing);	// РЎРђРњРћР• Р’РђР–РќРћР• РР— Р’РЎР•Р“Рћ РљРћР”Рђ !!!!!!!!!!
+		// РџРѕРєР°Р·С‹РІР°РµРј С„РѕСЂРјСѓ
 		form->Show();
 	}
 	
-	// функция для добавления точки на график по координатам
+	// С„СѓРЅРєС†РёСЏ РґР»СЏ РґРѕР±Р°РІР»РµРЅРёСЏ С‚РѕС‡РєРё РЅР° РіСЂР°С„РёРє РїРѕ РєРѕРѕСЂРґРёРЅР°С‚Р°Рј
 	public: static System::Void addPoint(int x, int y) {
-		// Создаем экземпляр класса точки с двумя координатами x и y
+		// РЎРѕР·РґР°РµРј СЌРєР·РµРјРїР»СЏСЂ РєР»Р°СЃСЃР° С‚РѕС‡РєРё СЃ РґРІСѓРјСЏ РєРѕРѕСЂРґРёРЅР°С‚Р°РјРё x Рё y
 		DataPoint^ point1 = gcnew DataPoint(x, y);
-		// Добавляем точку в серию Line
+		// Р”РѕР±Р°РІР»СЏРµРј С‚РѕС‡РєСѓ РІ СЃРµСЂРёСЋ Line
 		chart1->Series["Line"]->Points->Add(point1);
 	}
 
-	// Обработчик закрытия формы 1
+	// РћР±СЂР°Р±РѕС‚С‡РёРє Р·Р°РєСЂС‹С‚РёСЏ С„РѕСЂРјС‹ 1
 	public: System::Void MyForm1_FormClosing(Object^ sender, FormClosingEventArgs^ e) {
-		// Получаем координаты со второй формы
+		// РџРѕР»СѓС‡Р°РµРј РєРѕРѕСЂРґРёРЅР°С‚С‹ СЃРѕ РІС‚РѕСЂРѕР№ С„РѕСЂРјС‹
 		int x = ((MyForm1^) sender)->getX();
 		int y = ((MyForm1^) sender)->getY();
-		// Добавляем точку
+		// Р”РѕР±Р°РІР»СЏРµРј С‚РѕС‡РєСѓ
 		addPoint(x, y);
 	}
 };
